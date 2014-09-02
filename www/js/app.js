@@ -18,16 +18,16 @@ angular.module('socialAuth', ['ionic','firebase','com.htmlxprs.socialAuth.contro
 
     $state.go('login');
 
-    $rootScope.$on("$firebaseSimpleLogin:login", function(event, user) {
+    $rootScope.$on('$firebaseSimpleLogin:login', function(event, user) {
         userSession.user=user;
         $state.go('home');
     });
 
-    $rootScope.$on("$firebaseSimpleLogin:error", function(event, error) {
-         console.log("Error logging user in: ", error);
+    $rootScope.$on('$firebaseSimpleLogin:error', function(event, error) {
+         console.log('Error logging user in: ', error);
     });
 
-    $rootScope.$on("$firebaseSimpleLogin:logout", function(event) {
+    $rootScope.$on('$firebaseSimpleLogin:logout', function(event) {
           $state.go('login');
     });
   });
