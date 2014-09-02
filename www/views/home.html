@@ -1,0 +1,11 @@
+<ion-view title="Welcome">
+    <ion-content has-header="true" padding="true">
+        <h4>Welcome, {{user.displayName}}</h4>
+        <div ng-switch="user.provider">
+            <img ng-switch-when="facebook" ng-src="{{user.thirdPartyUserData.picture.data.url}}"/>
+            <img ng-switch-when="google" ng-src="{{user.thirdPartyUserData.picture}}" height="100" width="100"/>
+            <img ng-switch-when="twitter" ng-src="{{user.thirdPartyUserData.profile_image_url}}"/>
+        </div>
+        <a href ng-click="logout()">Log out</a>
+    </ion-content>
+</ion-view>
